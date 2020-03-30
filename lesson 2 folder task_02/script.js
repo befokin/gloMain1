@@ -16,4 +16,4 @@ console.log(result);
 
 result = result + '';
 
-console.log(result.substring(0,2))
+console.log(result.substring(0,2));
