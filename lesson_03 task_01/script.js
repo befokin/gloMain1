@@ -3,8 +3,8 @@
 
 'use strict';
 
-let money = 100;
-let income = '500';
+let money = 100000;
+let income = '5000';
 let addExpenses = 'Интернет, Такси, Коммуналка';
 let deposit = true;
 let mission = 10000;
@@ -52,15 +52,15 @@ console.log(amount2);
 
 // Задание №6
 let budgetMonth = amount1 + amount2;
-console.log(budgetMonth);
+console.log('Бюджет на месяц:  ' + budgetMonth);
 
 // Задание №7
 mission = mission / (money - budgetMonth);
-console.log(Math.ceil(mission));
+console.log('Цель будет достигнута за:  ' + Math.ceil(mission));
 
 // Задание №8
 budgetDay = (budgetDay + budgetMonth);
-console.log(Math.floor(budgetDay));
+console.log('Бюджет на день:  ' + Math.floor(budgetDay));
 
 // Задание №9
 
