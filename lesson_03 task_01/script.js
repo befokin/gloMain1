@@ -28,8 +28,8 @@ console.log(budgetDay);
 money = +prompt('Ваш ежемесячный доход?');
 
 //  Задание №3
-addExpenses = +prompt('Перечислите возможные расходы за расчитываемый период через запятую');
-console.log(addExpenses);
+addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую');
+console.log(addExpenses.toLowerCase().split(', '));
 
 
 
