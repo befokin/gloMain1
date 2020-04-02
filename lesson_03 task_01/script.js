@@ -3,7 +3,7 @@
 
 'use strict';
 
-let money = 1000;
+let money = 100;
 let income = '500';
 let addExpenses = 'Интернет, Такси, Коммуналка';
 let deposit = true;
@@ -25,10 +25,13 @@ let budgetDay = (money/30);
 console.log(budgetDay);
 
  // Задание №2
-money = prompt('Ваш ежемесячный доход?');
+money = +prompt('Ваш ежемесячный доход?');
 
 //  Задание №3
-addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую');
+addExpenses = +prompt('Перечислите возможные расходы за расчитываемый период через запятую');
+console.log(addExpenses);
+
+
 
 // Задание №4
 deposit = confirm('Есть ли у вас депозит в банке?');
@@ -52,6 +55,22 @@ let budgetMonth = amount1 + amount2;
 console.log(budgetMonth);
 
 // Задание №7
-mission = mission / (money + income - budgetMonth) = 
+mission = mission / (money - budgetMonth);
+console.log(Math.ceil(mission));
 
+// Задание №8
+budgetDay = (budgetDay + budgetMonth);
+console.log(Math.floor(budgetDay));
+
+// Задание №9
+
+if (budgetDay >= 1200) {
+    console.log('У вас высокий уровень дохода');
+} else if ((budgetDay >= 600) && (budgetDay <= 1200)) {
+    console.log('У вас средний уровень дохода');
+} else if ((budgetDay < 600) && (budgetDay >= 0)) {
+    console.log('К сожалению у вас уровень дохода ниже среднего');
+} else {
+    console.log('Что то пошло не так');
+} 
 
