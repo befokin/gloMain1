@@ -11,17 +11,17 @@ let deposit = true;
 let mission = 10000;
 let period = 12;
 
-let showTypeof = function(data) {
-console.log(data, typeof(data));
-}
+// let showTypeof = function(data) {
+// console.log(data, typeof(data));
+// }
 
-showTypeof(money);
-showTypeof(income);
-showTypeof(deposit);
+// showTypeof(money);
+// showTypeof(income);
+// showTypeof(deposit);
 
-// console.log(typeof money);
-// console.log(typeof income);
-// console.log(typeof deposit);
+console.log(typeof money);
+console.log(typeof income);
+console.log(typeof deposit);
 
 console.log(addExpenses.length);
 
@@ -60,16 +60,16 @@ let amount2 = +prompt('Во сколько это обойдется?');
 console.log(amount2);
 
 // Задание №6
-// let budgetMonth = amount1 + amount2;
-// console.log('Бюджет на месяц:  ' + budgetMonth);
+ let budgetMonth = amount1 + amount2;
+ console.log('Бюджет на месяц:  ' + budgetMonth);
 
 // Задание №7
-// mission = mission / (money - budgetMonth);
-// console.log('Цель будет достигнута за:  ' + Math.ceil(mission));
+mission = mission / (money - budgetMonth);
+console.log('Цель будет достигнута за:  ' + Math.ceil(mission));
 
 // Задание №8
-// budgetDay = (budgetDay + budgetMonth);
-// console.log('Бюджет на день:  ' + Math.floor(budgetDay));
+budgetDay = (budgetDay + budgetMonth);
+console.log('Бюджет на день:  ' + Math.floor(budgetDay));
 
 // Задание №9
 
@@ -88,24 +88,24 @@ if (budgetDay >= 1200) {
 // Урок №4
 // Задание №1
 
-function getExpensesMonth(amount1, amount2) {
+let getExpensesMonth = function() {
 let res = amount1 + amount2;
 return res;
 }
 
-console.log(getExpensesMonth(1500, 1000));
+console.log(getExpensesMonth());
 
 
 // Задание №2
-function getAccumulatedMonth(income, expense) {
-let accumulation = income - expense;
+let getAccumulatedMonth = function() {
+let accumulation = income - (amount1 + amount2);
 return accumulation;
 }
 
-console.log(getAccumulatedMonth(5000, 3000));
+console.log(getAccumulatedMonth());
 
 // Задание №3
-let accumulatedMonth = getAccumulatedMonth(5000, 3000);
+let accumulatedMonth = function getAccumulatedMonth();
 console.log(accumulatedMonth);
 
 // Задание №4
@@ -120,16 +120,5 @@ console.log(getTargetMonth(10000));
 budgetDay = accumulatedMonth / 30;
 console.log(budgetDay);
 
-let getStatusIncome = function() {
-if (budgetDay >= 1200) {
-    return ('У вас высокий уровень дохода');
-} else if ((budgetDay >= 600) && (budgetDay <= 1200)) {
-    return ('У вас средний уровень дохода');
-} else if ((budgetDay < 600) && (budgetDay >= 0)) {
-    return ('К сожалению у вас уровень дохода ниже среднего');
-} else {
-    return ('Что то пошло не так');
-} 
-}
-console.log(getStatusIncome());
+
 
