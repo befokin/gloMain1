@@ -22,8 +22,9 @@ console.log('цель заработвть' + ' '+ mission + ' ' + 'доллар
 
 console.log(addExpenses.toLowerCase().split(', '));
 
-let budgetDay = (money/30);
-console.log(budgetDay);
+// let budgetDay = (money/30);
+// console.log(budgetDay);
+
 
  // Задание №2
 money = +prompt('Ваш ежемесячный доход?');
@@ -52,19 +53,19 @@ let amount2 = +prompt('Во сколько это обойдется?');
 console.log(amount2);
 
 // Задание №6
- let budgetMonth = amount1 + amount2;
- console.log('Бюджет на месяц:  ' + budgetMonth);
+//  let budgetMonth = amount1 + amount2;
+//  console.log('Бюджет на месяц:  ' + budgetMonth);
 
 // Задание №7
-let mission1 = mission / (money - budgetMonth);
+let mission1 = mission / (money - amount1 - amount2);
 console.log('Цель будет достигнута за:  ' + Math.ceil(mission1));
 
 // Задание №8
-budgetDay = (budgetDay + budgetMonth);
+budgetDay = (budgetDay + amount1 + amount2);
 console.log('Бюджет на день:  ' + Math.floor(budgetDay));
 
 // Задание №9
-
+let getStatusIncome = function() {
 if (budgetDay >= 1200) {
     console.log('У вас высокий уровень дохода');
 } else if ((budgetDay >= 600) && (budgetDay <= 1200)) {
@@ -74,7 +75,8 @@ if (budgetDay >= 1200) {
 } else {
     console.log('Что то пошло не так');
 } 
-
+}
+console.log(getStatusIncome());
 
 
 // Урок №4
@@ -106,6 +108,7 @@ function getAccumulatedMonth(a, b, c) {
 accumulatedMonth = getAccumulatedMonth(money, amount1, amount2);
 console.log(accumulatedMonth);
 
+
 // Задание №4
 function getTargetMonth(a, b) {
 let period = a / b;
@@ -115,8 +118,7 @@ return period;
 console.log(getTargetMonth(mission, accumulatedMonth));
 
 // Задание №6
-budgetDay = accumulatedMonth / 30;
+
+let budgetDay = accumulatedMonth / 30;
 console.log(budgetDay);
-
-
 
