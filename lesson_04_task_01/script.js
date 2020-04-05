@@ -1,6 +1,4 @@
 
-// Урок №3
-// Задание №1
 
 'use strict';
 
@@ -11,19 +9,23 @@ let deposit = true;
 let mission = 10000;
 let period = 12;
 
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit);
+let showTypeOf = function(name) {
+    console.log(typeof(name));
+}
 
-console.log(addExpenses.length);
+showTypeOf(money);
+showTypeOf(income);
+showTypeOf(deposit);
 
-console.log('period =' + ' ' + period + ' ' + 'месяцев');
-console.log('цель заработвть' + ' '+ mission + ' ' + 'долларов');
+// console.log(addExpenses.length);
+
+// console.log('period =' + ' ' + period + ' ' + 'месяцев');
+// console.log('цель заработвть' + ' '+ mission + ' ' + 'долларов');
 
 console.log(addExpenses.toLowerCase().split(', '));
 
-let budgetDay = (money/30);
-console.log(budgetDay);
+// let budgetDay = (money/30);
+// console.log(budgetDay);
 
 
  // Задание №2
@@ -53,18 +55,52 @@ let amount2 = +prompt('Во сколько это обойдется?');
 console.log(amount2);
 
 // Задание №6
- let budgetMonth = amount1 + amount2;
- console.log('Бюджет на месяц:  ' + budgetMonth);
+//  let budgetMonth = amount1 + amount2;
+//  console.log('Бюджет на месяц:  ' + budgetMonth);
 
-// Задание №7
-let mission1 = mission / (money - budgetMonth);
-console.log('Цель будет достигнута за:  ' + Math.ceil(mission1));
+// // Задание №7
+// let mission1 = mission / (money - budgetMonth);
+// console.log('Цель будет достигнута за:  ' + Math.ceil(mission1));
 
-// Задание №8
-budgetDay = (budgetDay + budgetMonth);
-console.log('Бюджет на день:  ' + Math.floor(budgetDay));
+// // Задание №8
+// budgetDay = (budgetDay + budgetMonth);
+// console.log('Бюджет на день:  ' + Math.floor(budgetDay));
 
-// Задание №9
+
+// Урок №4
+// Задание №1
+
+function getExpensesMonth(a, b) {
+let res = a + b;
+return res;
+}
+    
+console.log(getExpensesMonth(amount1, amount2));
+    
+    
+// Задание №2 и №3
+function getAccumulatedMonth(a, b, c) {
+let res = a - b - c;
+return res;
+}
+    
+let accumulatedMonth = getAccumulatedMonth(money, amount1, amount2);
+console.log(accumulatedMonth);
+    
+    
+// Задание №4
+function getTargetMonth(a, b) {
+let period = a / b;
+return period;
+}
+    
+console.log(Math.ceil(getTargetMonth(mission, accumulatedMonth)));
+
+// Задание №6
+let budgetDay = accumulatedMonth / 30;
+console.log(budgetDay);
+
+
 let getStatusIncome = function() {
 if (budgetDay >= 1200) {
     return ('У вас высокий уровень дохода');
@@ -79,46 +115,9 @@ if (budgetDay >= 1200) {
 console.log(getStatusIncome());
 
 
-// Урок №4
-// Задание №1
-
-function getExpensesMonth(a, b) {
-let res = a + b;
-return res;
-}
-
-console.log(getExpensesMonth(amount1, amount2));
 
 
-// Задание №2
-function getAccumulatedMonth(a, b, c) {
-let res = a - b - c;
-return res;
-}
-
-console.log(getAccumulatedMonth(money, amount1, amount2));
-
-// Задание №3
-let accumulatedMonth = 0;
-function getAccumulatedMonth(a, b, c) {
-    let res = a - b - c;
-    return res;   
-}
-
-accumulatedMonth = getAccumulatedMonth(money, amount1, amount2);
-console.log(accumulatedMonth);
 
 
-// Задание №4
-function getTargetMonth(a, b) {
-let period = a / b;
-return period;
-}
 
-console.log(getTargetMonth(mission, accumulatedMonth));
-
-// Задание №6
-
-// let budgetDay = accumulatedMonth / 30;
-// console.log(budgetDay);
 
