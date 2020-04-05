@@ -11,14 +11,6 @@ let deposit = true;
 let mission = 10000;
 let period = 12;
 
-// let showTypeof = function(data) {
-// console.log(data, typeof(data));
-// }
-
-// showTypeof(money);
-// showTypeof(income);
-// showTypeof(deposit);
-
 console.log(typeof money);
 console.log(typeof income);
 console.log(typeof deposit);
@@ -64,8 +56,8 @@ console.log(amount2);
  console.log('Бюджет на месяц:  ' + budgetMonth);
 
 // Задание №7
-mission = mission / (money - budgetMonth);
-console.log('Цель будет достигнута за:  ' + Math.ceil(mission));
+let mission1 = mission / (money - budgetMonth);
+console.log('Цель будет достигнута за:  ' + Math.ceil(mission1));
 
 // Задание №8
 budgetDay = (budgetDay + budgetMonth);
@@ -88,33 +80,39 @@ if (budgetDay >= 1200) {
 // Урок №4
 // Задание №1
 
-let getExpensesMonth = function() {
-let res = amount1 + amount2;
+function getExpensesMonth(a, b) {
+let res = a + b;
 return res;
 }
 
-console.log(getExpensesMonth());
+console.log(getExpensesMonth(amount1, amount2));
 
 
 // Задание №2
-let getAccumulatedMonth = function() {
-let accumulation = income - (amount1 + amount2);
-return accumulation;
+function getAccumulatedMonth(a, b, c) {
+let res = a - b - c;
+return res;
 }
 
-console.log(getAccumulatedMonth());
+console.log(getAccumulatedMonth(money, amount1, amount2));
 
 // Задание №3
-let accumulatedMonth = function getAccumulatedMonth();
+let accumulatedMonth = 0;
+function getAccumulatedMonth(a, b, c) {
+    let res = a - b - c;
+    return res;   
+}
+
+accumulatedMonth = getAccumulatedMonth(money, amount1, amount2);
 console.log(accumulatedMonth);
 
 // Задание №4
-function getTargetMonth(mission) {
-let period = mission / accumulatedMonth;
+function getTargetMonth(a, b) {
+let period = a / b;
 return period;
 }
 
-console.log(getTargetMonth(10000));
+console.log(getTargetMonth(mission, accumulatedMonth));
 
 // Задание №6
 budgetDay = accumulatedMonth / 30;
