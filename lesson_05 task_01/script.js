@@ -14,10 +14,11 @@ let period = 12;
 let start = function() {
     
     do {
-        money = prompt('Ваш месячный доход?');
+        money = +prompt('Ваш месячный доход?');
     }
     while (!isNumber(money));
-
+    
+console.log(typeof(money));
 };       
 
 start();
@@ -53,12 +54,10 @@ let getExpensesMonth = function() {
         expenses[i] = prompt('Введите обязательную статью расходов?');
         
         do {
-            expenses1 = +prompt('Во сколько это обойдется?')
-            sum = sum + expenses1;
-        }
-
+            expenses1 = prompt('Во сколько это обойдется?')
+        }  
         while (!isNumber(expenses1)); 
-            
+        sum = sum + expenses1; 
     }
       
     console.log(expenses);
