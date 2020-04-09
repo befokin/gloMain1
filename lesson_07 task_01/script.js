@@ -4,43 +4,53 @@ let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n)
 };
 
-let money;
-let income = '5000';
-let addExpenses = 'Интернет, Такси, Коммуналка';
-let deposit = true;
-let mission = 100000;
-let period = 12;
-
-let start = function() {
+let money,
+    start = function() {
     
-    do {
-        money = +prompt('Ваш месячный доход?');
-    }
-    while (!isNumber(money));
-    
-console.log(typeof(money));
-};       
+        do {
+            money = +prompt('Ваш месячный доход?');
+        }
+        while (!isNumber(money));
+        
+    console.log(typeof(money));
+    };       
 
 start();
+
+let appData = {
+        income: {},
+        addIncome: [],
+        expenses: {},
+        addExpenses: [],
+        deposit: false,
+        mission: 50000,
+        period: 3,
+        asking: function(){
+            let addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую');
+            appData.addExpenses = addExpenses.toLowerCase().split(', ');
+                appData.deposit = confirm('Есть ли у вас депозит в банке?');
+        }
+};
+
 
 let showTypeOf = function(name) {
     console.log(typeof(name));
 };
 
 showTypeOf(money);
-showTypeOf(income);
-showTypeOf(deposit);
+showTypeOf(appData.income);
+showTypeOf(appData.deposit);
 
 
-console.log(addExpenses.toLowerCase().split(', '));
+// console.log(addExpenses.toLowerCase().split(', '));
 
-addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую');
-console.log(addExpenses.toLowerCase().split(', '));
+// addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую');
+// console.log(addExpenses.toLowerCase().split(', '));
 
 
 
-deposit = confirm('Есть ли у вас депозит в банке?');
-console.log(deposit);
+// deposit = confirm('Есть ли у вас депозит в банке?');
+// console.log(deposit);
 
 
 let expenses = [];
@@ -80,7 +90,7 @@ let accumulatedMonth = getAccumulatedMonth();
 let res;
 let getTargetMonth = function() {
     
-  res = Math.ceil(mission / accumulatedMonth);
+  res = Math.ceil(appData.mission / accumulatedMonth);
     console.log(res);    
     return res;
 }
