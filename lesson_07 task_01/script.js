@@ -81,10 +81,9 @@ appData.getBudget = function() {
     appData.budgetDay = Math.floor(appData.budgetMonth / 30);
  }
 
-appData.getTargetMonth = function() {
-    
-    appData.res = Math.ceil(appData.mission / appData.budgetMonth);
-  }
+appData.getTargetMonth  = function() {
+appData.res = Math.ceil(appData.mission / appData.budgetMonth);
+ }
 
 appData.getTargetMonth();
     if (appData.res >= 0) {
