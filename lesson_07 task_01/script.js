@@ -116,6 +116,8 @@ appData.getStatusIncome();
 console.log('Расходы за месяц: ' + appData.expensesMonth);
 
 console.log('Цель будет достигнута за период ' + appData.res + ' месяцев');
+
+console.log(appData.getStatusIncome());
  
 for (let key in appData){
       console.log('Наша программа включает в себя данные:    свойства :  '+ key + '  значения ' + appData[key]);
