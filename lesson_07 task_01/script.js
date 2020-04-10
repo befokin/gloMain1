@@ -59,7 +59,7 @@ let appData = {
                   appData.getExpensesMonth();
         }
 
-        appData.asking();
+        appData.asking(); 
 
 };
 
