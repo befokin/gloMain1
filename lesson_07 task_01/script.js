@@ -48,6 +48,7 @@ let appData = {
                             answer2 = prompt('Во сколько это обойдется?');
                         }
                         while (!isNumber(answer2)); 
+
                         answer2 = +answer2;
                         appData.expenses[answer1] = answer2;
                         console.log(appData.expenses);
