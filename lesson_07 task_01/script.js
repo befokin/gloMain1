@@ -57,7 +57,7 @@ let appData = {
                                            
                      } 
             }
-                appData.getExpensesMonth();
+               
         }
 };
 
@@ -77,7 +77,8 @@ for (let key in appData.expenses) {
 
 appData.getBudget = function() {
 
-    appData.budgetMonth  = appData.expenses.income - appData.getExpensesMonth;
+    appData.budgetMonth  = appData.budget - appData.expensesMonth;
+   
     appData.budgetDay = Math.floor(appData.budgetMonth / 30);
  }
 
