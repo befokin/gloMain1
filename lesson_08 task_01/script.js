@@ -62,7 +62,7 @@ let appData = {
            addExpenses.split(' ');
            addExpenses[0];
            addExpenses.substring(1);
-           console.log(addExpenses.toLowerCase());
+           console.log(addExpenses.toUpperCase());
            
             appData.deposit = confirm('Есть ли у вас депозит в банке?');
           
