@@ -94,63 +94,68 @@ let appData = {
                         appData.expenses[answer1] = +answer2;
 
                                 // console.log(appData.expenses);
-                    } 
-           
-                    appData.getExpensesMonth =  function() {
+                     } 
+                     
+                     appData.deposit = confirm('Есть ли у вас депозит в банке?');
+                     if(appData.deposit) {
+                      
+                        do {
+                          answer1 = prompt('Какой годовой процент?', '10');
+                        }
+                        while (!isNumber(answer1)); 
+                
+                        do {
+                          answer2 = prompt('Какая сумма заложена?', '10000');
+                        }
+                        while (!isNumber(answer2)); 
+                    }
+                          appData.percentDeposit = +answer1;
+                           
+                          appData.moneyDeposit = +answer2;
+        } ,
+
+
+                    getExpensesMonth:  function() {
                         for (let key in appData.expenses) {
                             appData.expensesMonth += +appData.expenses[key];
                         }   
                            return;
-                    }
+                    },
                     
-                    appData.getBudget = function() {
+                    getBudget:  function() {
                         appData.budgetMonth  = appData.budget - appData.expensesMonth;
                         appData.budgetDay = Math.floor(appData.budgetMonth / 30);
-                     }
+                     },
 
-                     appData.getTargetMonth = function() {
+                     getTargetMonth: function() {
                         appData.res = Math.ceil(appData.mission / appData.budgetMonth);
-                    }
+                    },
 
-                    appData.deposit = confirm('Есть ли у вас депозит в банке?');
+                    
                     //  getInfoDeposit = function() {
                         // let answer1 = 0;
                         // let answer2 = 0;
                       
-                          if(appData.deposit) {
-                      
-                              do {
-                                answer1 = prompt('Какой годовой процент?', '10');
-                              }
-                              while (!isNumber(answer1)); 
-                      
-                              do {
-                                answer2 = prompt('Какая сумма заложена?', '10000');
-                              }
-                              while (!isNumber(answer2)); 
-                          }
-                                appData.percentDeposit = +answer1;
-                                 
-                                appData.moneyDeposit = +answer2;
                         
-                                appData.calcSavedMoney = function() {
-                                return  appData.budgetMonth * appData.period;
-                             }
+                        
+                     calcSavedMoney: function() {
+                        return  appData.budgetMonth * appData.period;
+                    },
 
-                            appData.getStatusIncome = function() {
-                                if (appData.budgetDay >= 1200) {
-                                    return ('У вас высокий уровень дохода');
-                                } else if ((appData.budgetDay >= 600) && (appData.budgetDay <= 1200)) {
-                                    return ('У вас средний уровень дохода');
-                                } else if ((appData.budgetDay < 600) && (appData.budgetDay >= 0)) {
-                                    return ('К сожалению у вас уровень дохода ниже среднего');
-                                } else {
-                                    return('Что то пошло не так');
-                                } 
-                            }
+                        getStatusIncome: function() {
+                            if (appData.budgetDay >= 1200) {
+                                return ('У вас высокий уровень дохода');
+                            } else if ((appData.budgetDay >= 600) && (appData.budgetDay <= 1200)) {
+                                return ('У вас средний уровень дохода');
+                             } else if ((appData.budgetDay < 600) && (appData.budgetDay >= 0)) {
+                                return ('К сожалению у вас уровень дохода ниже среднего');
+                             } else {
+                                return('Что то пошло не так');
+                            } 
+                         },
                                     
-        }
-    };
+        
+};
 
 appData.asking();
 appData.getExpensesMonth();
