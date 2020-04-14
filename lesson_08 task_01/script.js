@@ -57,13 +57,18 @@ let appData = {
                 }
             }
 
-            
-           let addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую');
-           addExpenses.split(' ');
-           addExpenses[0];
-           addExpenses.substring(1);
-           console.log(addExpenses.toUpperCase());
+                    let addExpenses = prompt('Перечислите возможные расходы за расчитываемый период через запятую');
+                    let arr = addExpenses.split(' ');
+                    let newAddExpenses = '';
+                    for (let key in arr) {
+                        newAddExpenses += arr[key].substr(0,1).toUpperCase().trim() + arr[key].substr(1).toLowerCase().trim()  +  ' ';
+                    
+                    }
+                    console.log(newAddExpenses);
            
+
+
+       
             appData.deposit = confirm('Есть ли у вас депозит в банке?');
           
             appData.getExpensesMonth = function() {
@@ -91,10 +96,13 @@ let appData = {
                                 console.log(appData.expenses);
                     } 
             }
+                    
         }
     };
 
 
+
+    
 
 appData.budgetDay = 0;
 appData.budgetMonth = 0;
@@ -102,11 +110,12 @@ appData.expensesMonth = 0;
 
  
 appData.getExpensesMonth = function() {
-for (let key in appData.expenses) {
-    appData.expensesMonth += +appData.expenses[key];
+    for (let key in appData.expenses) {
+        appData.expensesMonth += +appData.expenses[key];
+    }   
+       return;
 }
-   return;
-}
+    
 
 appData.getBudget = function() {
 
@@ -127,18 +136,18 @@ appData.getTargetMonth();
     }
 
     appData.getInfoDeposit = function() {
-        let answer1;
-        let answer2;
+        let answer1 = 0;
+        let answer2 = 0;
       
           if(appData.deposit) {
       
               do {
-               answer1 = prompt('Какой годовой процент?', '10');
+                answer1 = prompt('Какой годовой процент?', '10');
               }
               while (!isNumber(answer1)); 
       
               do {
-              answer2 = prompt('Какая сумма заложена?', '10000');
+                answer2 = prompt('Какая сумма заложена?', '10000');
               }
               while (!isNumber(answer2)); 
           }
