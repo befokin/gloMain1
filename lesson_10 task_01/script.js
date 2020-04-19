@@ -28,17 +28,34 @@ advertise[0].remove();
 console.log(advertise);
 
 // восстановили порядок глав во 2-ой и 5-ой книгах
-const elementsbook2 = document.getElementsByTagName('ul')[1];
-// elementsbook2.classList.add('head');
-
-let arr = elementsbook2;
-console.log(arr);
-// arr.forEach(function(item, i, array) {
-//         console.log(item, i, array);
-// });
-// for (let item of arr)
-// console.log(item);
+const elementsbook2 = document.querySelectorAll('ul');
 console.log(elementsbook2);
+
+
+const elements = document.querySelectorAll('li');
+console.log(elements);
+
+elements[15].after(elements[8]);
+elements[10].before(elements[12]);
+elements[10].before(elements[14]);
+
+elements[38].before(elements[45]);
+elements[40].after(elements[38]);
+elements[43].after(elements[41]);
+
+
+// в шестой книге добавить главу
+const newElem = document.createElement('li');
+console.log(newElem);
+
+elements[55].append(newElem);
+console.log(newElem);
+
+newElem.insertAdjacentText('beforeend', 'Глава 8: За пределами ES6');
+
+
+
+
 
 
 
