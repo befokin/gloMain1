@@ -42,6 +42,7 @@ let appData = {
     moneyDeposit: 0,
         
     start: function() {
+    this.budget = +salaryAmount.value;
     this.getExpenses();
     this.getIncome();
     this.getExpensesMonth();
