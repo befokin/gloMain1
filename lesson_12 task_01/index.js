@@ -41,8 +41,10 @@ let appData = {
     percentDeposit: 0,
     moneyDeposit: 0,
     
-    this.budget = +salaryAmount.value;
-        console.log('salaryAmount.value:  ', salaryAmount.value);
+    
+start: function() {
+    // this.budget = +salaryAmount.value;
+    //     console.log('salaryAmount.value:  ', salaryAmount.value);
      
     this.getExpenses();
     this.getIncome();
@@ -54,7 +56,7 @@ let appData = {
 
     this.showResult();
     console.log(this);
-
+},
 
     showResult: function(){
     budgetMonthValue.value = this.budgetMonth;
@@ -179,12 +181,12 @@ let appData = {
 
     let log = false;
 
-    start: function() {
+    startAm: function() {
         if(salaryAmount.value === '') {
         alert('Вы не ввели месячный доход');
     } else if (log === false) {
             log === true;
-            start.call(appData);
+            appData.start.call(appData);
             start.style.display = 'none';
             cancel.style.display = 'inline-block';
     }
@@ -198,8 +200,11 @@ let appData = {
             start.style.display = 'inline-block';
 
             stringCount = document.querySelectorAll('[type = "text"]');
-            stringCount.value = '';
-
+            _this = this;
+            stringCount.forEach(function(item){ 
+                _this.stringCount.item.value = '';
+            });
+            
             this.budget: 0,
             this.budgetDay: 0,
             this.budgetMonth: 0,
@@ -218,7 +223,7 @@ let appData = {
 };               
 
     cancel.addEventListener('click', appData.cancel.bind(appData));
-    start.addEventListener('click', appData.start.bind(appData));
+    start.addEventListener('click', appData.startAm.bind(appData));
 
     expensesPlus.addEventListener('click', appData.addExpensesBlock.bind(appData));
     incomePlus.addEventListener('click', appData.addIncomeBlock.bind(appData)); 
