@@ -43,8 +43,6 @@ let appData = {
     
     
 start: function() {
-    // this.budget = +salaryAmount.value;
-    //     console.log('salaryAmount.value:  ', salaryAmount.value);
      
     this.getExpenses();
     this.getIncome();
@@ -148,7 +146,7 @@ start: function() {
     },
             
     getBudget:  function() {
-        this.budgetMonth  = this.budget + this.incomeMonth - this.expensesMonth;
+        this.budgetMonth  = this.incomeMonth - this.expensesMonth;
         this.budgetDay = Math.round(this.budgetMonth / 30);
     },
 
@@ -179,9 +177,10 @@ start: function() {
         return   (periodAmount.textContent = periodSelect.value);
     },
 
-    let log = false;
+    
 
     startAm: function() {
+        let log = false;
         if(salaryAmount.value === '') {
         alert('Вы не ввели месячный доход');
     } else if (log === false) {
@@ -193,17 +192,17 @@ start: function() {
     },
 
     cancel: function() {
+        let log = true;
         if(log === true) {
             log === false;
             cancel.call(appData);
             cancel.style.display = 'none';
             start.style.display = 'inline-block';
 
-            stringCount = document.querySelectorAll('[type = "text"]');
-            _this = this;
-            stringCount.forEach(function(item){ 
-                _this.stringCount.item.value = '';
-            });
+            stringCount = document.querySelectorAll('input');
+                stringCount.forEach(function(item){ 
+                item.value = '';
+                });
             
             this.budget: 0,
             this.budgetDay: 0,
