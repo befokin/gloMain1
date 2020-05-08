@@ -28,7 +28,7 @@ let deleteElem = function(deleteItem) {
 
 let render = function() {
     
-        localStorage.setItem('memory', JSON.stringify(data.todoData));    
+        localStorage.setItem('memory', JSON.stringify(data));    
 
         headerInput.value = '';
         todoList.textContent = '';
@@ -64,7 +64,7 @@ let render = function() {
                         //  Как менять статус дела? Выполнено оно или нет.
 
                 btnTodoRemove.addEventListener('click', function() {
-                      data.todoData =  deleteElem(item.value);
+                        deleteElem(item.value);
                         render();
                 });
         });
