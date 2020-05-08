@@ -75,7 +75,7 @@ data.todoData = deleteItem(item.value);
 render();
 });
     
-localStorage.setItem('memory', JSON.stringify(headerInput.value));
+localStorage.setItem('memory', JSON.stringify(todoData));
 });
 
 };
