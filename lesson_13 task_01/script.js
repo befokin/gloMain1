@@ -4,16 +4,12 @@ const todoControl = document.querySelector('.todo-control'),
         headerInput = document.querySelector('.header-input'),
         todoList = document.querySelector('.todo-list'),
         todoCompleted = document.querySelector('.todo-completed');
-        
-        let data = 0;
 
-        if (localStorage.getItem('memory') && localStorage.getItem('memory') !== undefined && localStorage.getItem('memory') !== '') {
-                data = JSON.parse(localStorage.getItem('memory'));
-        }
-
-data = {
-        todoData: []
-};
+let data = JSON.parse(localStorage.getItem('memory'));
+       
+if (!data) {
+        todoData: [];
+}
 
 let deleteElem = function(deleteItem) {
         let newData = [];
