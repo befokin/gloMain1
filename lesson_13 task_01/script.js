@@ -8,7 +8,9 @@ const todoControl = document.querySelector('.todo-control'),
 let data = JSON.parse(localStorage.getItem('memory'));
        
 if (!data) {
-        todoData: [];
+        data = {
+                todoData: []
+        };
 }
 
 let deleteElem = function(deleteItem) {
