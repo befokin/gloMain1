@@ -5,10 +5,11 @@ const todoControl = document.querySelector('.todo-control'),
         todoList = document.querySelector('.todo-list'),
         todoCompleted = document.querySelector('.todo-completed');
 
-let data = JSON.parse(localStorage.getItem('memory'));
-       
-if (!data) {
-        data = {
+let data;
+if (JSON.parse(localStorage.getItem('memory'))) {
+    data = JSON.parse(localStorage.getItem('memory'));
+} else {
+       data = {
                 todoData: []
         };
 }
