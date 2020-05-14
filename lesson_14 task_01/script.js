@@ -10,12 +10,11 @@ function DomElement (selector, height, width, bg, fontSize){
 
 DomElement.prototype.createElem  = function() {
       
-      if () {
-            const newElem = document.createElement('.div');
-      } else if () {
+      if (selector[0] === '.') {
+            const newElem = document.createElement('div');
+      } else if (selector[0] === '#') {
             const newElem = document.createElement('#p')
       }
-
 };
 
 function DomElement2(selector, height, width, bg, fontSize) {
