@@ -9,23 +9,31 @@ function DomElement (selector, height, width, bg, fontSize){
 };
 
 DomElement.prototype.createElem  = function() {
-      
+   
       if (selector[0] === '.') {
-            const newElem = document.createElement('div');
+            let newElem = document.createElement('div');
+
       } else if (selector[0] === '#') {
-            const newElem = document.createElement('#p')
+            let newElem = document.createElement('#p');
       }
+
+      newElem.cssText.height = '15px';
+      newElem.cssText.width = '10px';
+      newElem.cssText.background = 'red';
+      newElem.cssText.fontSize = '12px';
+
+      newElem.insertAdjacentText('beforeend', 'Новый текст');
 };
 
-function DomElement2(selector, height, width, bg, fontSize) {
+function DomElement1(selector, height, width, bg, fontSize) {
  
       DomElement.apply(this, arguments);
 };
     
-DomElement2.prototype = Object.create(DomElement.prototype);
+DomElement1.prototype = Object.create(DomElement.prototype);
      
-DomElement2.prototype.constructor =  DomElement2;
+DomElement1.prototype.constructor =  DomElement1;
 
 const domElement = new DomElement();    
-const domElement3 = new DomElement2();
-domElement3.createElem();
+const domElement1 = new DomElement1();
+domElement1.createElem();
