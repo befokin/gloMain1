@@ -42,6 +42,9 @@ DomElement1.prototype = Object.create(DomElement.prototype);
      
 DomElement1.prototype.constructor =  DomElement1;
 
-const domElement = new DomElement();    
+const domElement = new DomElement();
+console.log(domElement);    
 const domElement1 = new DomElement1();
+
 domElement1.createElem();
+console.log(domElement1);
