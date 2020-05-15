@@ -8,21 +8,29 @@ function DomElement (selector, height, width, bg, fontSize){
       this.fontSize = fontSize;
 };
 
+
+
 DomElement.prototype.createElem  = function() {
-   
+      let selector  = '';
+      
       if (selector[0] === '.') {
-            let newElem = document.createElement('div');
-
+            const elemA = document.createElement('div');
+            elemA = elemA.value;
+            elemA.cssText.height = '15px';
+            elemA.cssText.width = '10px';
+            elemA.cssText.background = 'red';
+            elemA.cssText.fontSize = '12px';
+            elemA.insertAdjacentText('beforeend', 'Новый текст');
+            
       } else if (selector[0] === '#') {
-            let newElem = document.createElement('#p');
+            const elemB = document.createElement('#p');
+            elemB = elemB = elemB.value;
+            elemB.cssText.height = '15px';
+            elemB.cssText.width = '10px';
+            elemB.cssText.background = 'red';
+            elemB.cssText.fontSize = '12px';
+            elemB.insertAdjacentText('beforeend', 'Новый текст');
       }
-
-      newElem.cssText.height = '15px';
-      newElem.cssText.width = '10px';
-      newElem.cssText.background = 'red';
-      newElem.cssText.fontSize = '12px';
-
-      newElem.insertAdjacentText('beforeend', 'Новый текст');
 };
 
 function DomElement1(selector, height, width, bg, fontSize) {
