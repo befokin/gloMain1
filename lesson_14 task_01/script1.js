@@ -17,14 +17,14 @@ DomElement.prototype.showElement = function() {
             this.element.classList.add(this.selector. slice(1));
        }  else if (this.selector[0] === '#') {
             this.element = document.createElement('p');
-            this.element.id = this.selector. slice(1);
+            this.element.id = this.selector.slice(1);
        } else {
            console.error('Ввели неверный селектор');
            return;
       }
 
-     this.element.style.cssText = 'height'  + this.height + 'px; width' + this.width + 'px; background' +
-     + this.bg + '; font-size' + this.fontSize + 'px;';
+     this.element.style.cssText = 'height:'  + this.height + 'px;' + 'width:' + this.width + 'px;' + 'background:' 
+     + this.bg + ';' + 'font-size:' + this.fontSize + 'px;';
 
      this.element.textContent = 'Новый объект';
      console.log(this.element);
