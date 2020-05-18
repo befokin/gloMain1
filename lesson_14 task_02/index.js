@@ -241,21 +241,9 @@ AppData.prototype.eventListeners = function() {
 };
     
 const appData = new AppData();
-
-console.log(appData);
-
 appData.eventListeners();
 
 
 let log = false;
 
-appData.getTargetMonth();
-appData.getStatusIncome();
-appData.calcPeriod();
-
-if (appData. getTargetMonth() >= 0) {
-        console.log('Цель будет достигнута');
-} else if (appData. getTargetMonth() < 0){
-        console.log('Цель не будет достигнута');
-}
 
